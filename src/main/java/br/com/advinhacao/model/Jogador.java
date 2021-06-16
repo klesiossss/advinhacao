@@ -6,16 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Jogador {
 	
+
 	@ApiModelProperty(value = "Código do jogador")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,8 +20,41 @@ public class Jogador {
 	private String nome;
 	
 	
+	
+	public Jogador(Long id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
+	
 	public Jogador(String nome) {
 		this.nome = nome;
 	}
+	
+	public Jogador() {
+	}
+
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	
+	
 	
 }

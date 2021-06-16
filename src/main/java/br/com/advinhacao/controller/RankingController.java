@@ -30,7 +30,7 @@ public class RankingController {
 		this.rankingService = rankingService;
 	}
 	
-	@ApiOperation(value = "Retorna um usuario por nome")
+	@ApiOperation(value = "Retorna os rankings de um usuario por meio do seu nome (endpoint opcional)")
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Ranking>>obterPorId(@PathVariable String nome){
 		List<Ranking> ranking = rankingService.findByJogadorName(nome);

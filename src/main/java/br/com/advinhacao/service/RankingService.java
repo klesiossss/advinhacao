@@ -34,12 +34,12 @@ public class RankingService {
 	
 	
 	public Ranking save(Ranking ranking) {
-		var jogador = jogadorRepo.findByNome(ranking.getJogador().getNome());
+		Jogador jogador = jogadorRepo.findByNome(ranking.getJogador().getNome());
 		if(jogador != null) {
 		ranking.setJogador(jogador);
 		}
 		else {
-			  var js =jogadorRepo.save(ranking.getJogador());
+			  Jogador js =jogadorRepo.save(ranking.getJogador());
 			  ranking.setJogador(js);
 		}
 		return rankingRepo.save(ranking);		

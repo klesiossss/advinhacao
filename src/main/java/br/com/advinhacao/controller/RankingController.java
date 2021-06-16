@@ -37,7 +37,7 @@ public class RankingController {
 		return ResponseEntity.ok(ranking);		
 	}
 	
-	@ApiOperation(value = "Obten todos os rankings ordenados como criterio de menores chutes")
+	@ApiOperation(value = "Obten todos os rankings ordenados como criterio de menores chutes.")
 	@GetMapping()
 	public ResponseEntity<List<Ranking>> ObterTodos(){
 		List<Ranking>devs = rankingService.findAll();
@@ -45,7 +45,7 @@ public class RankingController {
 	}
 	
 	
-	@ApiOperation(value = "Salva um novo ranking")
+	@ApiOperation(value = "Salva um novo ranking.")
 	@PostMapping
 	public ResponseEntity<Ranking> salvar(@RequestBody Ranking ranking){
 		Ranking dev = rankingService.save(ranking);
